@@ -153,7 +153,7 @@ class Board
 	attr_reader :unit, :way
 	attr_accessor :point, :cstate, :breath, :checked, :steps, :step, :enemies, :eatlist
 
-	#private
+	private
 
 	# m in 0...way
 	# n in 0...way
@@ -323,6 +323,7 @@ Shoes.app width: 800, height: 600, resizable: false do
 					killed = []
 					if @board.point[m - 1][n - 1] == 0  
 						@board.get_enemy(m - 1, n - 1, killed)
+						# looks ugly here? 
 						if killed.size == 1 # have to judge whether it is loot. 
 							#if @board.eatlist[killed[0]].size == 1
 							if @board.eatlist[killed[0]].size == 1
